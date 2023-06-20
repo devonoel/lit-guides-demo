@@ -62,6 +62,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "shoulda-matchers", "~> 5.3", :group => :test
 end
 
 gem "react_on_rails", "= 13.3"
