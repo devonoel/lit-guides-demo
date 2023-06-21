@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import style from './LitGuidesDemo.module.css';
 import SortButton from './SortButton.jsx';
+import GuideCard from './GuideCard.jsx';
 
 const LitGuidesDemo = (props) => {
   const [selectedSort, setSelectedSort] = useState('title');
@@ -28,10 +29,10 @@ const LitGuidesDemo = (props) => {
 
       <p>Selected: { selectedSort }</p>
 
-      <ul>
+      <div>
         { props.guides.sort(sortGuides)
-          .map(g => (<li key={g.id}>{g.name}</li>)) }
-      </ul>
+          .map(g => { return (<GuideCard key={g.id} id={g.id} name={g.name} author={g.author} />)}) }
+      </div>
     </React.Fragment>
   );
 }
