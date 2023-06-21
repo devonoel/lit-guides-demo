@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-on-rails": "13.3.0",
     "react-router": "^6.13.0",
+    "react-router-dom": "^6.13.0",
     "shakapacker": "6.6.0",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "5",
