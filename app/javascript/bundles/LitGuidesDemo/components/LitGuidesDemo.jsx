@@ -10,8 +10,10 @@ const LitGuidesDemo = (props) => {
       <h1>Lit Guides Demo</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<GuidesList guides={props.guides} />} exact />
-          <Route path="/foo" element={<GuideExpanded />} exact />
+          <Route path="/" element={
+            <GuidesList guides={props.guides} />} exact />
+          <Route path="/guides/:guideId" element={
+            <GuideExpanded guide={props.guide}/>} exact />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
