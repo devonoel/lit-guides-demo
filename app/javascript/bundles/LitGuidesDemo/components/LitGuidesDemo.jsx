@@ -1,6 +1,7 @@
 // import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import style from './LitGuidesDemo.module.css';
+import SortButton from './SortButton.jsx';
 
 const LitGuidesDemo = (props) => {
   const [selectedSort, setSelectedSort] = useState('title');
@@ -15,12 +16,14 @@ const LitGuidesDemo = (props) => {
       <h1>Lit Guides Demo</h1>
 
       <div>
-        <button onClick={ e => setSelectedSort('title') }
-          className={selectedSort == 'title' ? style.active : ''}>
-          Title A-Z</button>
-        <button onClick={ e => setSelectedSort('recent') }
-          className={selectedSort == 'recent' ? style.active : ''}>
-          Recently Added</button>
+        <SortButton name="title"
+          displayText="Title A-Z"
+          active={selectedSort == 'title'}
+          setSelectedSort={setSelectedSort} />
+        <SortButton name="recent"
+          displayText="Recently Added"
+          active={selectedSort == 'recent'}
+          setSelectedSort={setSelectedSort} />
       </div>
 
       <p>Selected: { selectedSort }</p>
@@ -34,4 +37,3 @@ const LitGuidesDemo = (props) => {
 }
 
 export default LitGuidesDemo;
-
