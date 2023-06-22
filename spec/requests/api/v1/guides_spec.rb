@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Api::V1::Guides", type: :request do
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+    subject { get api_v1_guides_path }
+    before(:each) { subject }
+    it { expect(response).to have_http_status(:ok) }
   end
 end
