@@ -6,7 +6,7 @@ const GuideCard = (props) => {
   return (
     <Link to={`/guides/${props.id}`} className={style.link} state={
       { name: props.name, author: props.author } }>
-      <div id={`guide-card-${props.id}`} className={style.card}>
+      <div id={`guide-card-${props.id}`} className={style.card + " guide-card"}>
         <h2>{props.name}</h2>
         <h3>{props.author}</h3>
       </div>
