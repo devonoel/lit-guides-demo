@@ -1,8 +1,8 @@
 // import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import style from './GuidesList.module.css';
 import SortButton from './SortButton.jsx';
 import GuideCard from './GuideCard.jsx';
+import style from './GuidesList.module.css';
 
 const GuidesList = (props) => {
   const [selectedSort, setSelectedSort] = useState('title');
