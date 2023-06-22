@@ -14,8 +14,12 @@ const GuidesList = (props) => {
   }
 
   useEffect(() => {
-    if (guides.length == 0) {
-      console.log('OOPS');
+    if (guides.length == 0) { fetchData() }
+
+    async function fetchData() {
+      const response = await fetch('/api/v1/guides');
+      const jsonData = await response.json();
+      setGuides(jsonData.guides);
     }
   }, []);
 
