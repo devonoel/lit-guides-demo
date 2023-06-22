@@ -6,4 +6,11 @@ RSpec.describe "Guides", type: :request do
     before(:each) { subject }
     it { expect(response).to have_http_status(:ok) }
   end
+
+  describe "GET /show" do
+    let(:guide) { FactoryBot.create(:guide) }
+    subject { get guide_path(guide.id) }
+    before(:each) { subject }
+    it { expect(response).to have_http_status(:ok) }
+  end
 end

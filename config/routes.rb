@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'guides/:id', to: 'guides#show'
+  get 'guides/:id', to: 'guides#show', as: :guide
   root 'guides#index'
 end
