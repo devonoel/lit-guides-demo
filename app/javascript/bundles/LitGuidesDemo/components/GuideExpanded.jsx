@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 const GuideExpanded = (props) => {
-  console.log(props);
   const guide = useLocation().state || props.guide;
 
   return (
