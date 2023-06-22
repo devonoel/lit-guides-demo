@@ -9,8 +9,14 @@ const GuidesList = (props) => {
   const [guides, setGuides] = useState(props.guides || []);
 
   const sortGuides = (g1, g2) => {
-    let attr = selectedSort == 'title' ? 'name' : 'created_at';
-    return g1[attr] < g2[attr] ? -1 : g1[attr] > g2[attr] ? 1 : 0
+    const isTitle = selectedSort == 'title'
+    const attr = isTitle ? 'name' : 'created_at';
+
+    if (isTitle) {
+      return g1[attr] < g2[attr] ? -1 : g1[attr] > g2[attr] ? 1 : 0
+    } else {
+      return g1[attr] > g2[attr] ? -1 : g1[attr] < g2[attr] ? 1 : 0
+    }
   }
 
   useEffect(() => {
